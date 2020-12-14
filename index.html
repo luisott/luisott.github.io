@@ -6,6 +6,16 @@
         <title>Follow up 2020 Fullscript</title>
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Follow up 2020 Fullscript">
+        <script>
+            var params = new URLSearchParams(document.location.search);
+            var url = params.get("url");
+
+            var imgMetaTwitter = document.createElement('meta');
+            imgMetaTwitter.name = 'twitter:image';
+            imgMetaTwitter.content = url;
+
+            document.getElementsByTagName('head')[0].appendChild(imgMetaTwitter);
+        </script>
     </head>
     <body>
         <img id="image" style="width:100%;">
@@ -14,12 +24,6 @@
             var url = params.get("url");
             var img = document.getElementById("image");
             img.setAttribute("src", url);
-
-            var imgMetaTwitter = document.createElement('meta');
-            imgMetaTwitter.name = 'twitter:image';
-            imgMetaTwitter.content = url;
-
-            document.getElementsByTagName('head')[0].appendChild(imgMetaTwitter);
         </script>
     </body>
 </html>
